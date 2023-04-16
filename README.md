@@ -20,6 +20,7 @@ Please keep in mind that the default state for TrickB custom type is `False` to 
 As of now as support for two utility functions.
 * `Out` Gives out the string representation of the Boolean state(including unset).
 * `IsSet` Just provides a boolean indicator to if the specific flag is set or unset. Note that this does not tell user if flag is set to True/False.
+* `TrickBFromString` This one takes a string and returns a trickBoolean equivalent type(`True`, `False`, `Unset`). This can be coupled with `Out` or other logic gates.
 
 ## Usage
 To get package locally
@@ -43,5 +44,10 @@ a := tb.UnSet
 b := tb.False
 out := a.And(b).Out()
 fmt.Println(out)
+```
+
+Chain different strings as boolean equivalent types against logic gates and get result
+```
+fmt.Println(tb.TrickBFromString("true").And(tb.TrickBFromString("unset")).Out())
 ```
 

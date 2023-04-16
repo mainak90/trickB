@@ -1,5 +1,7 @@
 package trickB
 
+import "github.com/iancoleman/strcase"
+
 type TBool int
 
 const (
@@ -10,7 +12,7 @@ const (
 
 var values = [3]TBool{False, UnSet, True}
 
-var strings = [3]string{"False", "Unset", "True"}
+var strings = [3]string{"False", "UnSet", "True"}
 
 func max(a, b TBool) TBool {
 	if a > b {
@@ -59,6 +61,25 @@ func (a TBool) IsSet() bool {
 		return false
 	}
 	return true
+}
+
+func TrickBFromString(s string) TBool {
+	switch strcase.ToCamel(s) {
+	case "UnSet":
+		return UnSet
+	case "Unset":
+		return UnSet
+	case "True":
+		return True
+	case "TRUE":
+		return True
+	case "False":
+		return False
+	case "FALSE":
+		return False
+	default:
+		return UnSet
+	}
 }
 
 
