@@ -14,7 +14,7 @@ TrickB implements the standard logical operators supported by boolean types.
 
 It supports 3 states on a variable `False`, `True` and `UnSet`. 
 `UnSet` denotes that a bool like variable has been initiated but not set.
-Please keep in mind that the default state for TrickB custom type is `False` to unset it, you need to do a `TrickB.Unset` of the variable.
+Please keep in mind that the default state for TrickB custom type is `UnSet` to set it, you need to do a `TrickB.True/False` of the variable.
 
 ## Utilities
 As of now as support for two utility functions.
